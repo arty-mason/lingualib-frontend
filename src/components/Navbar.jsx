@@ -39,12 +39,18 @@ export default function ButtonAppBar() {
           <Button color="inherit" component={Link} to="/home">
             Home
           </Button>
-          <Button color="inherit">Pricing</Button>
+          <Button color="inherit" component={Link} to="/pricing">
+            Pricing
+          </Button>
           <Button color="inherit" component={Link} to="/about">
             About us
           </Button>
-          <Button color="inherit">Reviews</Button>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" component={Link} to="/review">
+            Reviews
+          </Button>
+          <Button color="inherit" component={Link} to="/login">
+            Login
+          </Button>
           <Button color="inherit">
             <LanguageSharpIcon />
           </Button>
