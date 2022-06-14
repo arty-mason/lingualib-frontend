@@ -1,46 +1,55 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+} from "@mui/material";
+import LanguageSharpIcon from "@mui/icons-material/LanguageSharp";
 import MenuIcon from "@mui/icons-material/Menu";
-import MenuBookSharpIcon from "@mui/icons-material/MenuBookSharp";
-import { theme } from "./palette";
+import { Link } from "react-router-dom";
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" backgroundColor={theme.palette.primary.main}>
-        <Toolbar>
+    <AppBar position="sticky">
+      <Toolbar>
+        <Box>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            // sx={{ display: { md: "none", xs: "flex" } }}
+            sx={{ display: { sm: "none", xs: "block" } }}
           >
             <MenuIcon />
             <Typography variant="h6" component="div" marginLeft={1}>
               Menu
             </Typography>
           </IconButton>
-          <Typography
-            variant="h6"
-            d
-            component="div"
-            marginRight={4}
-            sx={{ flexGrow: 1, textAlign: "center" }}
-          >
-            Welcome to LinguaLib - the best online learning platform for
-            students and teachers alike!
-            <MenuBookSharpIcon sx={{ ml: 1 }} />
-          </Typography>
-
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "end",
+            width: "100%",
+          }}
+        >
+          <Button color="inherit" component={Link} to="/home">
+            Home
+          </Button>
+          <Button color="inherit">Pricing</Button>
+          <Button color="inherit" component={Link} to="/about">
+            About us
+          </Button>
+          <Button color="inherit">Reviews</Button>
           <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+          <Button color="inherit">
+            <LanguageSharpIcon />
+          </Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }

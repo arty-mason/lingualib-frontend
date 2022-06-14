@@ -5,21 +5,15 @@ export const theme = createTheme({
   // K.I.S.S. - Creating a reusable theme palette
   palette: {
     primary: {
-      main: "#3f51b5",
-      light: "#5c6bc0",
-      dark: "#7986cb",
+      main: "#009688",
+      light: "#33ab9f",
+      dark: "#00695f",
     },
 
     secondary: {
-      main: "#26a69a",
-      light: "#4db6ac",
-      dark: "#80cbc4",
+      main: "#81d4fa",
+      light: "#9adcfb",
+      dark: "#5a94af",
     },
-
-    tertiary: {
-      main: "#607d8b",
-      light: "#78909c",
-      dark: "#90a4ae",
-    }
   }
 })
