@@ -1,6 +1,6 @@
 import { theme } from "./config/palette";
 import { ThemeProvider } from "@mui/material";
-import { Routes, Route, Link, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import NavBar from "./components/Navbar";
 import RequireAuth from "./components/RequireAuth";
@@ -10,8 +10,9 @@ import About from "./pages/public/About";
 import Login from "./pages/public/Login";
 import Review from "./pages/public/Review";
 import Pricing from "./pages/public/Pricing";
-import UserHomePage from "./pages/app/Home";
-import UserProfile from "./pages/app/Profile";
+import UserHomePage from "./pages/app/UserHomePage";
+import UserProfile from "./pages/app/UserProfile";
+import Courses from "./pages/public/Courses";
 
 function App() {
   return (
@@ -19,10 +20,12 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="home" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="login" element={<Login />} />
-        <Route path="review" element={<Review />} />
+        <Route path="courses" element={<Courses />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="about" element={<About />} />
+        <Route path="review" element={<Review />} />
+        <Route path="login" element={<Login />} />
+
         <Route
           path="app/home"
           element={

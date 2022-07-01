@@ -7,9 +7,12 @@ import {
   Button,
   IconButton,
 } from "@mui/material";
-import LanguageSharpIcon from "@mui/icons-material/LanguageSharp";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import Popover from "./Popover";
+import langChoices from "../services/lang-choices";
+///Importing supported language list
 
 export default function ButtonAppBar() {
   return (
@@ -39,11 +42,14 @@ export default function ButtonAppBar() {
           <Button color="inherit" component={Link} to="/home">
             Home
           </Button>
+          <Button color="inherit" component={Link} to="/courses">
+            Courses
+          </Button>
           <Button color="inherit" component={Link} to="/pricing">
             Pricing
           </Button>
           <Button color="inherit" component={Link} to="/about">
-            About us
+            About
           </Button>
           <Button color="inherit" component={Link} to="/review">
             Reviews
@@ -52,7 +58,18 @@ export default function ButtonAppBar() {
             Login
           </Button>
           <Button color="inherit">
-            <LanguageSharpIcon />
+            <Popover>
+              {langChoices.map((lang) => {
+                ///Iterating through language array using .map function
+                return (
+                  <Button key={lang.id}>
+                    {/* Rendering each language in a button, using id as a key */}
+                    {lang.name}
+                    {/* Rendering the language name in each button */}
+                  </Button>
+                );
+              })}
+            </Popover>
           </Button>
         </Box>
       </Toolbar>
